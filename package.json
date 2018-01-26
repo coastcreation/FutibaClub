@@ -1,0 +1,26 @@
+{
+  "name": "futibaclub",
+  "version": "1.0.0",
+  "description": "FullstackAcademy3 - App Futiba Club",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coastcreation/FutibaClub.git"
+  },
+  "author": "Diego Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coastcreation/FutibaClub/issues"
+  },
+  "homepage": "https://github.com/coastcreation/FutibaClub#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.1"
+  }
+}
