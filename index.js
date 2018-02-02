@@ -6,6 +6,8 @@ const session = require('express-session')
 
 const account = require('./account')
 const admin = require('./admin')
+const groups = require('./groups')
+const classification = require('./classification')
 
 
 app.use(express.static('public'))
@@ -34,9 +36,11 @@ const init = async() => {
         }
         next()
     })
-
+  
     app.use(account(connection))
     app.use('/admin', admin(connection))
+    app.use('/groups', groups(connection))
+    app.use('/classification', classification(connection))
 
     app.listen(3000, err => {
         console.log('Futiba Club server is running...')

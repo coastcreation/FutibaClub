@@ -6,7 +6,18 @@ const crpt = require('./crypto')
 
 const init = connection => {
     app.get('/',async (req,res) => {
-        res.render('home')
+        const query = `select
+                groups.id,
+                groups.name,
+                sum(guessings.score) as score
+                from groups
+                left join
+                    guessings
+                        on guessings.group_id = groups.id
+                group by guessings.group_id
+                order by score DESC`
+            const [rows] = await connection.execute(query)
+        res.render('home', {groups: rows})
     })
     app.get('/login',(req,res) => {
         res.render('login', { error: false })
